@@ -514,8 +514,8 @@
 
   .nav__title {
     color: #fff;
-    font-size: $type-size-6;
-    background: $primary-color;
+    font-size: $type-size-5;
+    background: mix(#fff,$primary-color,30%); /*$primary-color;*/
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
@@ -531,10 +531,10 @@
   padding: 0;
   width: 100%;
   list-style: none;
-  font-size: $type-size-6;
+  font-size: $type-size-5;
 
   @include breakpoint($large) {
-    font-size: $type-size-7;
+    font-size: $type-size-6;
   }
 
   a {
