@@ -7,8 +7,8 @@ categories:
 tags:
   - [Note]
 
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
  
 date: 2022-12-13
 last_modified_at: 2022-12-13
