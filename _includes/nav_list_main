@@ -89,7 +89,7 @@
 			<ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Note" %}
-                        <li><a href="/categories/note" class="">기록 노트 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/note" class="">기록 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
