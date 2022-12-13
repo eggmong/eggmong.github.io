@@ -326,7 +326,8 @@ body {
   margin-bottom: 8px;
   padding: 3px 8px;
   text-decoration: none;
-  border: 1px solid $background-color;
+  border: 1px solid mix(#000, $border-color, 25%);
+  /* border: 1px solid $background-color; */
   border-radius: $border-radius;
   /* background-color: #4D5357; */
   font-family: $cute;
@@ -336,6 +337,7 @@ body {
     text-decoration: none;
 	color: $link-color-hover;
     /* color: mix(#00adb5, $text-color, 40%); 커서 댈 때 색깔 */
+	background-color: #FFDC87;
   }
 }
 
