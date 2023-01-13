@@ -77,16 +77,8 @@ layout: default
 
   </article>
 
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    <div class="page__related"> <!--site.data.ui-text[site.locale].related_label-->
-      <h4 class="page__related-title">{{ "최근 글 10 개 :)" }}</h4>
-        {% for post in site.related_posts limit:10 %}
-          {% include archive-single3.html %}
-        {% endfor %}
-    </div>
   {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
+  {% if page.id and page.related %}
     <div class="page__related">
       <h4 class="page__related-title">{{ "최근 글" }}</h4>
       <div class="grid__wrapper">
