@@ -1,17 +1,16 @@
 ---
 title:  "[Unity] Accelerator (캐시서버) 구축"
-excerpt: ""
 
 categories:
   - UnityDocs
 tags:
-  - [Unity][UnityDocs]
+  - [Unity, Game Engine]
 
 toc: false
 toc_sticky: false
  
 date: 2023-01-13
-last_modified_at: 2023-01-13
+last_modified_at: 2023-01-15
 ---
 
 # Unity Accelerator
