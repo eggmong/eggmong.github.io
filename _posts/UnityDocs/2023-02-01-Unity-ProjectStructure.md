@@ -50,7 +50,7 @@ SVN이나 Git 같은 VCS로 프로젝트를 관리할 때도 이 3가지 폴더�
 그 외에는 용도별로 Core, Common 등으로 구분하여 넣어두는게 보기 편한 것 같다.  
 폴더가 너무 많아지면 난잡해보이니까...
   
-![AssetsStructure](/assets/images/posts/assetsfolderstructure.png)
+![AssetsStructure](/assets/images/posts/assetsfolderstructure.png)  
   
   
 *참고 링크
