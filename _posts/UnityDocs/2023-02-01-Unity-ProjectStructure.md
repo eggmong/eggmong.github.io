@@ -16,7 +16,7 @@ last_modified_at: 2023-02-07
 # 유니티 프로젝트 구조  
 ## 유니티 폴더 구조
 
-먼저 유니티 프로젝트를 구성하는 기본적인 폴더는 <mark style='background-color: #fff5b1'>Assets, Packages, ProjectSettings</mark> 이다.<br>
+먼저 유니티 프로젝트를 구성하는 기본적인 폴더는 <mark style='background-color: #fff5b1'>Assets, Packages, ProjectSettings</mark> 이다.  
 SVN이나 Git 같은 VCS로 프로젝트를 관리할 때도 이 3가지 폴더만 업로드하여 관리하면 된다.
 
 
@@ -30,25 +30,26 @@ SVN이나 Git 같은 VCS로 프로젝트를 관리할 때도 이 3가지 폴더�
 |obj|아직 연결되지 않은 컴파일된 바이너리 파일이 저장되는 폴더|
 |Logs|유니티에서 기록된 Log들이 저장되는 폴더|
   
-<br>  
-<br>  
   
 이전 회사에서 Library, obj 폴더는 물론이고 csproj, sln 파일까지 싹 다 svn에 커밋해놓은 걸 보고 뒷골이 땡긴 적이 있었다..  
-<br>
   
 *참고 링크  
-[https://drehzr.tistory.com/1306](https://drehzr.tistory.com/1306)  
-[https://forum.unity.com/threads/is-it-safe-to-delete-library-folder-of-backed-up-project.982032/](https://forum.unity.com/threads/is-it-safe-to-delete-library-folder-of-backed-up-project.982032/)  
-[https://stackoverflow.com/questions/5308491/what-are-the-obj-and-bin-folders-created-by-visual-studio-used-for](https://stackoverflow.com/questions/5308491/what-are-the-obj-and-bin-folders-created-by-visual-studio-used-for)  
-[https://answers.unity.com/questions/993291/is-library-folder-necessary.html](https://answers.unity.com/questions/993291/is-library-folder-necessary.html)  
-[https://docs.unity3d.com/560/Documentation/Manual/BehindtheScenes.html](https://docs.unity3d.com/560/Documentation/Manual/BehindtheScenes.html)  
-[https://docs.unity3d.com/Manual/ExternalVersionControlSystemSupport.html](https://docs.unity3d.com/Manual/ExternalVersionControlSystemSupport.html)  
-
-<br>
-
+- [https://drehzr.tistory.com/1306](https://drehzr.tistory.com/1306)  
+- [https://forum.unity.com/threads/is-it-safe-to-delete-library-folder-of-backed-up-project.982032/](https://forum.unity.com/threads/is-it-safe-to-delete-library-folder-of-backed-up-project.982032/)  
+- [https://stackoverflow.com/questions/5308491/what-are-the-obj-and-bin-folders-created-by-visual-studio-used-for](https://stackoverflow.com/questions/5308491/what-are-the-obj-and-bin-folders-created-by-visual-studio-used-for)  
+- [https://answers.unity.com/questions/993291/is-library-folder-necessary.html](https://answers.unity.com/questions/993291/is-library-folder-necessary.html)  
+- [https://docs.unity3d.com/560/Documentation/Manual/BehindtheScenes.html](https://docs.unity3d.com/560/Documentation/Manual/BehindtheScenes.html)  
+- [https://docs.unity3d.com/Manual/ExternalVersionControlSystemSupport.html](https://docs.unity3d.com/Manual/ExternalVersionControlSystemSupport.html)  
+  
+  
 ## 에셋 폴더 구조 (Assets Folder Structure)
 
-
+개인적인 생각이지만 주요한 씬들은 각각 폴더별로 나누어 관리를 하고,  
+그 외에는 용도별로 Core, Common 등으로 구분하여 넣어두는게 보기 편한 것 같다.  
+폴더가 너무 많아지면 난잡해보이니까...
+  
+![AssetsStructure](/assets/images/posts/assetsfolderstructure.png)
+  
   
 *참고 링크
-[https://sam-16930.medium.com/unity-project-structure-a694792cefed](https://sam-16930.medium.com/unity-project-structure-a694792cefed)  
+- [https://sam-16930.medium.com/unity-project-structure-a694792cefed](https://sam-16930.medium.com/unity-project-structure-a694792cefed)  
