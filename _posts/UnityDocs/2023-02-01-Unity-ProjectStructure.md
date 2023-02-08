@@ -10,7 +10,7 @@ toc: false
 toc_sticky: false
  
 date: 2023-02-01
-last_modified_at: 2023-02-07
+last_modified_at: 2023-02-08
 ---
 
 # 유니티 프로젝트 구조  
@@ -31,8 +31,10 @@ SVN이나 Git 같은 VCS로 프로젝트를 관리할 때도 이 3가지 폴더�
 |Logs|유니티에서 기록된 Log들이 저장되는 폴더|
   
   
-이전 회사에서 Library, obj 폴더는 물론이고 csproj, sln 파일까지 싹 다 svn에 커밋해놓은 걸 보고 뒷골이 땡긴 적이 있었다..  
   
+~~이전 회사에서 Library, obj 폴더는 물론이고 csproj, sln 파일까지 싹 다 svn에 커밋해놓은 걸 보고 뒷골이 땡긴 적이 있었다..~~  
+  
+   
 *참고 링크  
 - [https://drehzr.tistory.com/1306](https://drehzr.tistory.com/1306)  
 - [https://forum.unity.com/threads/is-it-safe-to-delete-library-folder-of-backed-up-project.982032/](https://forum.unity.com/threads/is-it-safe-to-delete-library-folder-of-backed-up-project.982032/)  
