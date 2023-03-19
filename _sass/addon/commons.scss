@@ -39,7 +39,7 @@ body {
   background: var(--body-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: "Dovemayo_gothic" //"Source Sans Pro", "Microsoft Yahei", sans-serif;
+  font-family: "Dovemayo_gothic"; //"Source Sans Pro", "Microsoft Yahei", sans-serif;
   line-height: 1.75;
 }
 
@@ -172,7 +172,7 @@ mjx-container {
 }
 
 kbd {
-  font-family: "Dovemayo_gothic" //inherit;
+  font-family: "Dovemayo_gothic"; //inherit;
   display: inline-block;
   vertical-align: middle;
   line-height: 1.3rem;
@@ -1090,7 +1090,7 @@ $sidebar-display: "sidebar-display";
   display: none;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: "Dovemayo_gothic" //sans-serif;
+  font-family: "Dovemayo_gothic"; //sans-serif;
   color: var(--topbar-text-color);
   text-align: center;
   width: 70%;
@@ -1206,7 +1206,7 @@ $sidebar-display: "sidebar-display";
   }
 
   .toast-body {
-    font-family: "Dovemayo_gothic" //Lato, sans-serif;
+    font-family: "Dovemayo_gothic"; //Lato, sans-serif;
     line-height: 1.25rem;
 
     button {
