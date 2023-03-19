@@ -21,17 +21,19 @@ last_modified_at: 2023-01-15
 
 ## 설치 및 사용방법
 
-- Accelerator 설치 방법
+- <b>Accelerator 설치 방법</b>
 
-    Unity Teams 구독을 하지 않았다면 [Unity Accelerator 문서](https://docs.unity3d.com/kr/2020.3/Manual/UnityAccelerator.html#install)에서 설치 프로그램을 다운 받을 수 있다.
+  Unity Teams 구독을 하지 않았다면, [Unity Accelerator 문서](https://docs.unity3d.com/kr/2020.3/Manual/UnityAccelerator.html#install)에서 설치 프로그램을 다운 받을 수 있다.
 
-    작업자의 컴퓨터가 아닌 <u>헤드리스 컴퓨터</u>에 설치한다. (빌드머신 등)
+  작업자의 컴퓨터가 아닌 <u>헤드리스 컴퓨터</u>에 설치한다. (빌드머신 등)
 
-    설치를 진행하다보면 작업자들이 참조할 수 있는 IP주소가 나타난다. 이것을 작업자들의 Unity 에디터에서 입력하면 된다.
+  설치를 진행하다보면 작업자들이 참조할 수 있는 IP주소가 나타난다. 이것을 작업자들의 Unity 에디터에서 입력하면 된다.
 
-- 에디터에서 Accelerator 사용하기
+<br>
 
-    Unity 에디터에서 Edit → Project Setting 선택 후 위에서 받은 IP주소를 입력하면 된다.
+- <b>에디터에서 Accelerator 사용하기</b>  
+
+  Unity 에디터에서 Edit → Project Setting 선택 후, 위에서 받은 IP주소를 입력하면 된다.
 
 
 <br>
