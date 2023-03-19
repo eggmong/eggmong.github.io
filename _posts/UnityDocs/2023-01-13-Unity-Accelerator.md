@@ -21,8 +21,6 @@ last_modified_at: 2023-01-15
 
 ## 설치 및 사용방법
 
-<p>
-
 - Accelerator 설치 방법
 
     Unity Teams 구독을 하지 않았다면 [Unity Accelerator 문서](https://docs.unity3d.com/kr/2020.3/Manual/UnityAccelerator.html#install)에서 설치 프로그램을 다운 받을 수 있다.
@@ -34,7 +32,7 @@ last_modified_at: 2023-01-15
 - 에디터에서 Accelerator 사용하기
 
     Unity 에디터에서 Edit → Project Setting 선택 후 위에서 받은 IP주소를 입력하면 된다.
-</p>
+
 
 <br>
 
