@@ -11,7 +11,7 @@ toc: true
 toc_sticky: false
  
 date: 2023-03-29
-last_modified_at: 2023-03-29
+last_modified_at: 2023-03-30
 ---
 
 >이번에 하드 포맷하고 새로 윈도우 설치했다.  
