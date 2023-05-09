@@ -7,4 +7,4 @@ order: 5
 
 ***
 
-{% assign posts = site.categories.Programmers %}
+{% assign posts = site.categories.programmers %}
