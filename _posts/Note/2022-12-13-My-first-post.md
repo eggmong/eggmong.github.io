@@ -12,6 +12,7 @@ toc_sticky: false
  
 date: 2022-12-13
 last_modified_at: 2022-12-13
+comments: false
 ---
 
 이게 뭐냐...?
