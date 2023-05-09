@@ -4,7 +4,7 @@ title:  "Struct 타입 null check (Nullable Type)"
 categories:
   - C#
 tags:
-  - [C#]
+  - [CSharp]
 
 toc: true
 toc_sticky: true
