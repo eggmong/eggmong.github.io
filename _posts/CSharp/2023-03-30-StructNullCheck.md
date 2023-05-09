@@ -2,7 +2,7 @@
 title:  "Struct 타입 null check (Nullable Type)"
 
 categories:
-  - C#
+  - CSharp
 tags:
   - [CSharp]
 

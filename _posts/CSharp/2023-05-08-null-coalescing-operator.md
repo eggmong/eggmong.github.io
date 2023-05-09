@@ -2,7 +2,7 @@
 title:  "null 병합 연산자 (?? 및 ??= ...물음표 두개 연산자)"
 
 categories:
-  - C#
+  - CSharp
 tags:
   - [CSharp]
 

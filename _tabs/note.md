@@ -1,7 +1,7 @@
 ---
-title: Coding Test
+title: Note
 layout: category
 icon: fas fa-stream
 order: 2
-permalink: categories/coding-test
+permalink: categories/note
 ---
