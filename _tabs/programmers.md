@@ -1,7 +1,7 @@
 ---
 layout: archives
 icon: fas fa-stream
-permalink: categories/Programmers
+permalink: categories/programmers
 order: 5
 ---
 
