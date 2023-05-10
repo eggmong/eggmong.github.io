@@ -2,6 +2,6 @@
 title: C#
 layout: category
 icon: fas fa-stream
-order: 1
+order: 2
 permalink: categories/csharp
 ---

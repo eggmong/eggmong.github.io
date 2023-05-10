@@ -2,6 +2,6 @@
 title: Note
 layout: category
 icon: fas fa-stream
-order: 2
+order: 7
 permalink: categories/note
 ---
