@@ -1,1 +1,0 @@
-https://eggmong.github.io/
