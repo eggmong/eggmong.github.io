@@ -6,8 +6,9 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            ✨ <span>전체 글 수</style> <span>{{sum}}</style> <span>개</style>
+        <a href="index.html" class="">✨ <span>전체 글 수</style> <span>{{sum}}</style> <span>개</style>
       </li>
+      
       <li>
         
         <!---
