@@ -350,8 +350,9 @@ div.donation-btn {
   margin-right: 5px;
   padding: 5px 10px;
   text-decoration: none;
-  border: 1px solid mix(#000, $border-color, 25%);
+  border: 0px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
+  background-color: antiquewhite;
 
   &:hover {
     text-decoration: none;

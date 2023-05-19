@@ -243,8 +243,8 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 4px;
-        background: $primary-color;
+        height: 100%;//4px;
+        background: rgba(248, 231, 194, 0.5);//$primary-color;
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
