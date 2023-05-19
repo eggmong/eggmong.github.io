@@ -13,6 +13,8 @@ date: 2023-03-30
 last_modified_at: 2023-05-08
 ---
 
+<br>
+
 struct 타입 변수에 값이 들어가있는지 확인해야 했다.
 
 먼저 struct는 값 타입이라 null이 될 수 없다.  
