@@ -5,10 +5,10 @@ categories:
 tags:
   - [Unity, Game Engine]
 
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 date: 2023-05-22
-last_modified_at: 2023-05-22
+last_modified_at: 2023-05-23
 ---
 
 <br>
@@ -26,7 +26,7 @@ UnityEngine.Random.seed = System.DateTime.Now.Millisecond;
 
 그런데 최근 시드를 생성해야 했어서 찾아보니 이제 저런 식의 코드는 더이상 사용되지 않는 듯 하다.  
 
-```C#
+```c#
 UnityEngine.Random.InitState((int)DateTime.Now.Thicks);
 ```
 
