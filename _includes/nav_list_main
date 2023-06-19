@@ -29,6 +29,20 @@
         </ul>
         <ul>
             {% for category in site.categories %}
+            {% if category[0] == "Cpp" %}
+            <li><a href="/categories/cpp" class=""> C++ ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+            {% if category[0] == "Shader" %}
+            <li><a href="/categories/shader" class=""> Shader ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
             {% if category[0] == "UnityDocs" %}
             <li><a href="/categories/unitydocs" class="">Unity ({{category[1].size}})</a></li>
             {% endif %}
