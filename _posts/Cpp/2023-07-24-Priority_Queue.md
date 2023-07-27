@@ -52,6 +52,18 @@ priority_queue<int, vector<int>, greater<int>> queue;  // 오름차순으로 정
 - empty() : 큐가 비어있으면 true, 아니면 false 반환  
 - size() : 큐의 크기 반환  
 
+## Pair와 사용하기
+
+```cpp
+priority_queue<pair<int,int>> pairQueue;
+
+pairQueue.push(make_pair(1, 100));
+pairQueue.push(make_pair(2, 200));
+```
+
+pair와 같이 사용되는 경우 비교 우선순위는 먼저 첫번째 요소이고,  
+첫번째 요소가 같다면 두번째 요소로 비교하게 된다.
+
 ## 예제
 
 ```cpp
