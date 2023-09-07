@@ -1,9 +1,9 @@
 ---
-title:  "[NavMesh] 동적으로 생성한 프리팹에서 네브메쉬 굽기 (Navigation Static) "
+title:  "[Error] [NavMesh] 동적으로 생성한 프리팹에서 네브메쉬 굽기 (Navigation Static) "
 categories:
   - UnityDocs
 tags:
-  - [Unity, Game Engine, NavMesh]
+  - [Unity, Game Engine, NavMesh, Error]
 
 toc: false
 toc_sticky: false
