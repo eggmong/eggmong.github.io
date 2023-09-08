@@ -17,7 +17,7 @@ comments: true
 
 <br>
 
-# <Hamster is Free!> 개발일지 1
+# <Hamster is Free!> 개발일지 1-1
 
 작업한 것들을 나중에 회상할 수 있도록 기록을 남겨두는게 좋을 것 같아서 개발일지를 쓰기로 했다.  
 첫 커밋부터 현재(23.09.08) 까지의 작업 내역을 기록해두겠다.  
@@ -49,7 +49,7 @@ comments: true
 처음 시스템 베이스부터 전부 스스로 구현해보려고 하다보니 시간도 오래 걸렸지만,  
 회사에서 주어진 일을 할 때보다 더 많은 걸 배울 수 있었다.  
 
-## DataTable
+## DataTable (SheetDownloader)
 
 우선 게임에 필요한 `데이터테이블` 작업부터 소개하자면.  
 나의 집 컴퓨터엔 엑셀이 깔려있지 않으므로 `Google Sheets` 를 사용하기로 했다.  
@@ -150,6 +150,20 @@ bool 변수로 _Skip 값을 받아서, 스킵할 수 있는 경우 (예를 들�
 
 이 역시 자세한 내역은 [Repository(링크)](https://github.com/SukereamTeam/hamsterisfree) 에서 확인할 수 있지만...  
 현재(23.09.08) 는 비공개 상태이다.
+
+## DataContainer
+
+데이터테이블로 사용하는 `ScriptableObject` 를 들고 있는 싱글톤 클래스이다.  
+
+뿐만 아니라 스테이지마다 사용할 Sprite들도 들고 있다.  
+
+1. Lobby에서 스테이지 선택
+2. Game 씬으로 전환되기 전 DataContainer에서 StageTable 을 읽어와 해당 Stage에 필요한 리소스 체크
+3. 리소스 로드하여 `Dictionary` 로 담아두기
+4. Game 씬으로 전환된 후 DataContainer에 담긴 Sprite 들을 기반으로 맵 세팅
+
+이런식으로 구현했다.  
+
 
 ## Singleton
 
