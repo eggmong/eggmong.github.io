@@ -85,9 +85,9 @@ int main()
   std::unique_ptr<Vector> copiedVector2(myVector);          // 컴파일 에러! 유니크 포인터 복사 못 함.
   ```
 
-### 1-1. 유니크 포인트가 적합한 3가지 경우
+## 2. 유니크 포인트가 적합한 3가지 경우
 
-#### 예시1: 클래스에서 생성자/소멸자
+### 예시1: 클래스에서 생성자/소멸자
 
 ```cpp
 // OLD
@@ -131,7 +131,7 @@ Player::Player(std::string name)
 // Player 소멸될 때 알아서 지워짐.
 ```
 
-#### 예시2: 지역 변수
+### 예시2: 지역 변수
 
 ```cpp
 // OLD
@@ -158,7 +158,7 @@ int main()
 }
 ```
 
-#### 예시3: STL 벡터에 포인터 저장하기
+### 예시3: STL 벡터에 포인터 저장하기
 
 ```cpp
 // OLD
@@ -203,9 +203,9 @@ int main()
 }
 ```
 
-### 1-2. 유니크 포인터 만들기 (C++14 이후)
+## 3. 유니크 포인터 만들기 (C++14 이후)
 
-#### 문제: 원시 포인터 공유
+### 문제: 원시 포인터 공유
 
 ```cpp
 Vector* vectorPtr = new Vector(10.f, 30.f);         // 원시 포인터 생성
@@ -230,7 +230,7 @@ anotherVector = nullptr;            // 이거 연산자 오버로딩임
 // vectorPtr는 이미 날라갔으므로 에러가 발생하게 될 것...
 ```
 
-#### 해결책 (C++14 이후) : make_unique
+### 해결책 (C++14 이후) : make_unique
 
 ```cpp
 #include <memory>
@@ -250,7 +250,7 @@ int main()
   - 주어진 매개변수와 자료형으로 new 키워드 호출해줌
   - 둘 이상의 유니크 포인터가 원시 포인터를 공유할 수 없도록 막아줌
 
-#### 만들기 예시
+### 만들기 예시
 
 ```cpp
 Vector* vectorPtr = new Vector(10.f, 30.f);
@@ -269,14 +269,15 @@ std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.f, 30.f);
 std::unique_ptr<Vector[]> vectors = std::make_unique<Vector[]>(20);
 ```
 
-### 1-3. 유니크 포인터 재설정 : reset()
+
+#### 유니크 포인터 재설정 : reset()
 
 ```cpp
 int main()
 {
     std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.f, 30.f);
     vector.reset(new Vector(20.f, 40.f));
-    vector.reset();                         // nullptr 대입하는 거랑 같다!
+    vector.reset();                         // 이건 nullptr 대입하는 거랑 같다!
     // ...
 }
 ```
@@ -287,5 +288,114 @@ int main()
   - nullptr이 reset()과 가독성이 더 높긴 함
   - 그러나 reset()은 vector가 원시 포인터가 아님을 확실히 보여줌
 
-### 1-4. 유니크 포인터 가져오기 : get()
 
+#### 유니크 포인터 가져오기 : get()
+
+유니크 포인터 안의 포인터를 받길 원할 때. (원시 포인터)  
+유니크 포인터는 본인이 소유하고 있는 거니까,  
+그 안의 원시 포인터를 밖으로 줄 땐 원시 포인터르 주는 게 나쁘지 않다!...  
+
+```cpp
+// Vector.cpp
+void Vector::Add(const Vector* other)
+{
+  mX += other->mX;
+  mY += other->mY;
+}
+
+// -----------------------------------------
+#include <memory>
+#include "Vector.h"
+
+int main()
+{
+  std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.f, 30.f);
+  std::unique_ptr<Vector> anotherVector = std::make_unique<Vector>(20.f, 40.f);
+
+  vector->Add(anotherVector.get());     // <- 이렇게!
+  vector->Print();
+
+  return 0;
+}
+```
+
+- 원시 포인터를 반환한다
+
+
+
+#### 원시 포인터 소유권 박탈하기 : release()
+
+원시 포인터를 <b>지우지 않고</b> 소유권을 놓아준다.  
+근데 좋은 함수는 아님... 나중에 지우는 걸 체크해야 하니까.  
+차라리 유니크 포인터가 갖게 두고 알아서 지워지게 두는게 낫다는 말.  
+
+```cpp
+int main()
+{
+  std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.f, 30.f);
+  Vector* vectorPtr = vector.release();     // <- 이렇게!
+  // ...
+}
+```
+
+- 원시 포인터에 대한 소유권을 박탈하고 원시 포인터 반환
+- `release()` 호출 후 `get()` 을 호출하면 nullptr 반환
+  ```cpp
+  // vector는 유니크 포인터!
+  Vector* vectorPtr = vector.release();
+  Vector* vectorPtr2 = vector.get();          // nullptr 반환
+  ```
+
+
+
+#### 유니크 포인터 소유권 이전하기 : std::move()  
+
+```cpp
+#include <memory>
+#include "Vector.h"
+
+int main()
+{
+  std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.f, 30.f);
+  std::unique_ptr<Vector> anotherVector(std::move(vector));     // <- 이거!
+}
+```
+
+위 함수가 실행되면,  
+`vector`는 소유권을 잃었으니까 null 이 되버리고,  
+`anotherVector` 는 vector가 갖고있던 원시 포인터의 소유권을 갖게 됨.  
+
+- `std::unique_ptr` 은 소유한 원시 포인터를 아무하고도 공유하지 않음
+- 즉, 주소 복사를 하지 않는다는 뜻
+- 대신, 소유권을 다른 `std::unique_ptr` 로 옮길 수 있음 -> `std::move`
+  - `std::move` 를 사용할 경우 메모리 할당/해제가 일어나진 않음
+- 예외 : `const std::unique_ptr`
+
+##### 예시: const 유니크 포인터는 어떨까?
+
+```cpp
+const std::unique_ptr<Vector> vector = std::make_unique<Vector>(10.f, 30.f);
+
+std::unique_ptr<Vector> anotherVector(std::move(vector));   // <- 컴파일 에러!
+```
+
+const 니까 당연히 바뀔 수 없다... 그래서 에러.  
+
+
+
+## 4. 유니크 포인터 해부
+
+```cpp
+template<typename T>                          // 유니크 포인터 아무거나 받도록 템플릿화
+class unique_ptr<T> final                     // 상속 안되도록 final
+{
+  public:
+    unique_ptr(T* ptr) : mPtr(ptr) {}         // 원시 포인터 받는 생성자. 포인터 변수에 저장하겠다!
+    ~unique_ptr() { delete mPtr; }            // 지울 때. 포인터 변수 지운다!
+    T* get() { return mPtr; }                 // 원시 포인터 반환하는 함수 get(). 포인터 변수 반환.
+    unique_ptr(const unique_ptr&) = delete;   // 복사 안되도록 복사 생성자 지움.
+    unique_ptr& operator=(const unique_ptr&) = delete;  // 대입 안되도록 대입 연산도 지움.
+  private:
+    T* mPtr = nullptr;                        
+}
+```
