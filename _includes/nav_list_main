@@ -44,7 +44,14 @@
         <ul>
             {% for category in site.categories %}
             {% if category[0] == "UnityDocs" %}
-            <li><a href="/categories/unitydocs" class="">Unity ({{category[1].size}})</a></li>
+            <li><a href="/categories/unitydocs" class="">Unity Docs ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for category in site.categories %}
+            {% if category[0] == "UnrealDocs" %}
+            <li><a href="/categories/unrealdocs" class="">Unreal Docs ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %}
         </ul>
