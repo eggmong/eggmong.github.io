@@ -23,6 +23,9 @@ last_modified_at: 2024-01-04
 - SetValue_InContainer
 - ProcessEvent
 
+
+# MyGameInstance.h
+
 ```cpp
 // MyGameInstance.h
 #pragma once
@@ -45,6 +48,8 @@ private:
 	FString SchoolName;
 };
 ```
+
+# MyGameInstance.cpp
 
 ```cpp
 #include "MyGameInstance.h"         // 메인 인스턴스의 헤더가 항상 위에 있게..
@@ -96,6 +101,8 @@ void UMyGameInstance::Init()
 
 ***
 
+# Person.h
+
 ```cpp
 // Person.h
 #pragma once
@@ -128,6 +135,8 @@ private:
 };
 ```
 
+# Person.cpp
+
 ```cpp
 // Person.cpp
 #include "Person.h"
@@ -154,6 +163,10 @@ void UPerson::SetName(const FString& InName)
 }
 ```
 
+***
+
+# Student.h
+
 ```cpp
 // Student.h
 #pragma once
@@ -177,6 +190,8 @@ private:
 };
 ```
 
+# Student.cpp
+
 ```cpp
 // Student.cpp
 #include "Student.h"
@@ -195,6 +210,10 @@ void UStudent::DoLesson()
 	UE_LOG(LogTemp, Log, TEXT("%d학년 %d번 %s님이 수업을 듣습니다"), Year, Id, *Name);
 }
 ```
+
+***
+
+# Teacher.h
 
 ```cpp
 // Teacher.h
@@ -217,6 +236,8 @@ private:
 	int32 Id;
 };
 ```
+
+# Teacher.cpp
 
 ```cpp
 // Teacher.cpp
