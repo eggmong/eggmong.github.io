@@ -33,9 +33,247 @@ last_modified_at: 2024-01-05
 
 ## 코드
 
+### Card.h
+#### UMETA
 
 ```cpp
+UENUM()
+enum class ECardType : uint8
+{
+	Student =  1 UMETA(DisplayName = "For Student"),
+	Teacher UMETA(DisplayName = "For Teacher"),
+	Staff UMETA(DisplayName = "For Staff"),
+	Invalid
+};
 
+UCLASS()
+class UNREALCOMPOSITION_API UCard : public UObject
+{
+	GENERATED_BODY()
+	
+public:
+	UCard();
+
+	ECardType GetCardType() const { return CardType; }
+	void SetCardType(ECardType InCardType) { CardType = InCardType; }
+
+private:
+	UPROPERTY()
+	ECardType CardType;
+
+	UPROPERTY()
+	uint32 Id;
+};
+```
+
+### Card.cpp
+
+```cpp
+#include "Card.h"
+
+UCard::UCard()
+{
+	CardType = ECardType::Invalid;
+	Id = 0;
+}
+```
+
+
+### LessonInterface.h
+
+```cpp
+// This class does not need to be modified.
+UINTERFACE(MinimalAPI)
+class ULessonInterface : public UInterface
+{
+	GENERATED_BODY()
+};
+
+class UNREALCOMPOSITION_API ILessonInterface
+{
+	GENERATED_BODY()
+
+public:
+	virtual void DoLesson()
+	{
+		// 언리얼 인터페이스는 구현도 가능함! 비워두지 않아도 됨
+
+		UE_LOG(LogTemp, Log, TEXT("수업에 입장합니다."));
+	}
+};
+```
+
+LessonInterface.cpp 는 수정 안 했음.  
+
+[인터페이스 U 붙은건 안건드린다! 링크](https://eggmong.github.io/unrealdocs/3-Unreal-Interface/#%EC%96%B8%EB%A6%AC%EC%96%BC-c-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%ED%8A%B9%EC%A7%95)
+
+
+
+### Person.h
+
+```cpp
+UCLASS()
+class UNREALCOMPOSITION_API UPerson : public UObject
+{
+	GENERATED_BODY()
+	
+public:
+	UPerson();
+
+	// FORCEINLINE : 인라인 지정
+	FORCEINLINE const FString& GetName() const { return Name; }
+	FORCEINLINE void SetName(const FString& InName) { Name = InName; }
+
+	FORCEINLINE class UCard* GetCard() const { return Card; }
+	FORCEINLINE void SetCard(class UCard* InCard) { Card = InCard; }
+
+protected:
+	UPROPERTY()
+	FString Name;
+
+	// 전방선언. 헤더를 포함하지 않고도 포인터 선언 가능.
+	// 헤더를 포함하지 않아 구체적인 구현부는 몰라도
+	// 포인터 크기는 알 수 있다.
+	// 보통 오브젝트는 포인터로 관리하기 때문에...
+	// 이렇게 전방선언 하여 의존성을 낮출 수 있다.
+	/*UPROPERTY()
+	class UCard* Card;*/
+
+	// 그런데 언리얼5 버전부턴 원시 포인터를 다르게 쓰라고 에픽에서 제안함.
+	UPROPERTY()
+	TObjectPtr<class UCard> Card;
+
+};
+```
+
+#### 전방선언 및 TObjectPtr
+
+`TObjectPtr<class UCard> Card;`
+
+### Person.cpp
+
+```cpp
+#include "Person.h"
+#include "Card.h"
+
+UPerson::UPerson()
+{
+	Name = TEXT("홍길동");
+	Card = CreateDefaultSubobject<UCard>(TEXT("NAME_Card"));	// FName
+}
+```
+
+
+### Teacher.h
+
+```cpp
+#include "Person.h"
+#include "LessonInterface.h"
+
+UCLASS()
+class UNREALCOMPOSITION_API UTeacher : public UPerson, public ILessonInterface
+{
+	GENERATED_BODY()
+	
+public:
+	UTeacher();
+
+	virtual void DoLesson() override;
+};
+```
+
+### Teacher.cpp
+
+```cpp
+#include "Teacher.h"
+#include "Card.h"
+
+UTeacher::UTeacher()
+{
+	Name = TEXT("이선생");
+	Card->SetCardType(ECardType::Teacher);
+}
+
+void UTeacher::DoLesson()
+{
+	ILessonInterface::DoLesson();
+
+	UE_LOG(LogTemp, Log, TEXT("%s님은 가르칩니다."), *Name);
+}
+```
+
+
+### Student.h
+
+```cpp
+#include "Person.h"
+#include "LessonInterface.h"
+
+UCLASS()
+class UNREALCOMPOSITION_API UStudent : public UPerson, public ILessonInterface
+{
+	GENERATED_BODY()
+	
+public:
+	UStudent();
+
+	virtual void DoLesson() override;
+};
+```
+
+```cpp
+#include "Student.h"
+#include "Card.h"
+
+UStudent::UStudent()
+{
+	Name = TEXT("이학생");
+	Card->SetCardType(ECardType::Student);
+}
+
+void UStudent::DoLesson()
+{
+	// 인터페이스에서 구현한 걸 출력하고 싶다면
+	// Super::DoLesson(); 떠올렸겠지만 아님...
+	// 학생의 부모는 Person임. LessonInterface가 아니라.
+	// 이렇게 작성
+	ILessonInterface::DoLesson();
+
+	UE_LOG(LogTemp, Log, TEXT("%s님은 공부합니다."), *Name);
+}
+```
+
+#### 인터페이스에서 작성된 함수를 호출하는 법
+
+`ILessonInterface::DoLesson();`
+
+
+### Staff.h
+
+```cpp
+#include "Person.h"
+UCLASS()
+class UNREALCOMPOSITION_API UStaff : public UPerson
+{
+	GENERATED_BODY()
+	
+public:
+	UStaff();
+};
+```
+
+
+### Staff.cpp
+
+```cpp
+#include "Staff.h"
+#include "Card.h"
+
+UStaff::UStaff()
+{
+	Name = TEXT("이직원");
+	Card->SetCardType(ECardType::Staff);
+}
 ```
 
 
