@@ -28,7 +28,8 @@ last_modified_at: 2024-01-05
   - 내가 소유한 언리얼 오브젝트를 Subobject라고 한다.
   - 나를 소유한 언리얼 오브젝트를 Outer라고 한다.
 
-![Composition](https://drive.google.com/uc?export=view&id=1WjzaxoI1wgotb8Kqo5K3Tcjqc7mOq02E)  
+![Composition](https://github.com/eggmong/eggmongImages/raw/main/Images/
+UnrealComposition.png)  
 
 
 ## 코드

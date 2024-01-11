@@ -118,7 +118,8 @@ public class Person
 
 
 
-![Delegate](https://drive.google.com/uc?export=view&id=1xnfZjG4JJ2bvAhPCAZQLGrLPWnXDzpKx)  
+![Delegate](https://github.com/eggmong/eggmongImages/raw/main/Images/
+UnrealDeleagte.png)  
 
 
 ### CourseInfo.h

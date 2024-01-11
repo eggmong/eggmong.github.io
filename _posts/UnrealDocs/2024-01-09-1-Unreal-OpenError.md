@@ -21,7 +21,7 @@ git에 언리얼 프로젝트를 커밋하고,
 
 # 해결 방법
 
-![Error1](https://drive.google.com/uc?export=view&id=1SfAR3ISKxNMin2BLEuWDS_lY0s98rfi_)  
+![Error](https://github.com/eggmong/eggmongImages/raw/main/Images/UnrealProjectOpenError.png)  
 
 `.uproject` 파일에 우클릭으로 `generate Visual Studio project files` 을 실행한다.  
 그러면 `.sln` 솔루션 파일이 생긴다.  

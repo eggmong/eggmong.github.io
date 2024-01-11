@@ -109,7 +109,7 @@ FString FloatIntString2 = FString::Printf(TEXT("Int:%d Float:%f"), IntValueFromS
 
 # FString의 구조와 활용
 
-![path](https://drive.google.com/uc?export=view&id=1yFPXh_Xyfvm2TZuYYhaLmq1MbIpfGyww)  
+![path](https://github.com/eggmong/eggmongImages/raw/main/Images/UnrealFString.png)  
 
 - 다른 타입에서 FString으로의 변환
   - FString::Printf

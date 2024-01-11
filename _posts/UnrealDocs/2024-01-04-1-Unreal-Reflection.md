@@ -72,7 +72,7 @@ UPROPERTY(EditDefaultsOnly, Category=Pawn) // <-------- 이거!!!
   일반적인 C++ 객체를 생성할 때 사용되는 `new() 키워드` 가 아니라 별도의 `NewObject()` 라는  
   API를 제공해서 생성해야 함
 
-![UO](https://drive.google.com/uc?export=view&id=1HvbpD3EEcN8onfoLQ9Qi3gPPlUtTnM0l)  
+![UO](https://github.com/eggmong/eggmongImages/raw/main/Images/UnrealObject.png)  
 
 
 
@@ -85,7 +85,8 @@ UPROPERTY(EditDefaultsOnly, Category=Pawn) // <-------- 이거!!!
 - `CDO` 는 클래스 정보로부터 `GetDefaultObject` 함수를 통해 얻을 수 있음
 - UClass 및 `CDO` 는 엔진 초기화 과정에서 생성되므로 콘텐츠 제작에서 안심하고 사용 가능
 
-![CDO](https://drive.google.com/uc?export=view&id=1jXJ8hYHvkWixj-6t1tYe-5JlUALTAalC)
+![CDO](https://github.com/eggmong/eggmongImages/raw/main/Images/
+UnrealClassDefaultObject.png)  
 
 
 
