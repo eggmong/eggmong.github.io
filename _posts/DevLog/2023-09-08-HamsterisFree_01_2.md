@@ -25,7 +25,7 @@ comments: true
 
 ## Game 구성요소 - Player class
 
-![log1](https://drive.google.com/uc?export=view&id=1Ue97r7bgAfSrDGdDgIjl78ko9cWmX_x9)  
+![log1](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08-2_log1.png)  
 
 <Hamster is Free!> 는 `한 줄 긋기` 게임이다.  
 반드시 한 번에 드래그하여 ExitTile에 도달해야 스테이지가 클리어 되는 것이다.  
@@ -33,7 +33,7 @@ comments: true
 그래서 드래그를 할 때 `Line Renderer` 를 사용하여 드래그 궤적을 남겼다.  
 (이 궤적이 길인 것 처럼 표현하고 싶었다. 지금은 그저 흰색이지만, 나중엔 텍스쳐를 넣어야지... )
 
-![log2](https://drive.google.com/uc?export=view&id=1C3KMTMcbXOqkOa5rDwVsQpO38PFDaxmG)  
+![log2](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08-2_log2.png)  
 
 그리고 Mask.  
 게임을 시작 하게되면 일정 시간(1초) 동안 꾹 누르고 있어야 게임이 정상적으로 시작되는데,  
@@ -170,11 +170,12 @@ public abstract UniTaskVoid TileTrigger();
 개발 중인 게임에도 셰이더를 적용해보고 싶어서, 뭘 해볼지 고민하다가  
 게임 배경이 조금 밋밋한 듯 하여 셰이더로 그라데이션 애니를 넣어주는 작업을 해보았다.  
 
-![shader](https://drive.google.com/uc?export=view&id=1QZcueNr8ZpzVAf4F0a0tWHm-j1a8Z0-x)  
+<!--![shader]-->
+<img src="https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08-2_log3.GIF">  
 
 Unity의 Shader Graph로 만들었다.  
 
-![shader2](https://drive.google.com/uc?export=view&id=1ElBvF-R8FpTbmFSrVhaBkq45LVIp3vPI)  
+![shader2](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08-2_log4.png)  
 
 ## Art Resources
 
@@ -183,7 +184,8 @@ Unity의 Shader Graph로 만들었다.
 
 그리고 Intro 씬에 나올 로고도 그려보았다.
 
-![res](https://drive.google.com/uc?export=view&id=1Q2vSpIQCBuazvhhe7zBn1wFH90Qm4hw3)  
+<!--![res]-->
+<img src="https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08-2_log5.GIF">  
 
 사실 이 프로젝트는 나 혼자 개발할 원맨팀이었는데. (물론 지금도 내가 다 작업하고 있다!)  
 추후 붙일 백엔드 작업 및 빌드를 뽑기위한 CI/CD 작업을 해주시겠다는 분이 계셔서,  
