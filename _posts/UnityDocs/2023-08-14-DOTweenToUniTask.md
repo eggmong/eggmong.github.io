@@ -21,7 +21,7 @@ DOTWeen을 ToUniTask 로 변환할 수 있대서... 해봤는데 안되는 것�
 Editor의 Scripting Define Symbols에  
 UNITASK_DOTWEEN_SUPPORT를 추가해야 했다. 그래야 확장함수가 뜬다.  
 
-![ToUniTask](https://drive.google.com/uc?export=view&id=18SVlhB-ytyVWPgtG2Yuepwqf1REz_p7P)
+![ToUniTask](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-08-14_ToUniTask.png)  
 
 ```c#
 await tweener

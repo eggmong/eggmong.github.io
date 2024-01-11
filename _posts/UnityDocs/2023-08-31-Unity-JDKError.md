@@ -27,7 +27,7 @@ last_modified_at: 2023-08-31
 Android 세팅이 잘못되었나보다고 추측할 수 있었다.  
 이것 저것 들쑤셔본 결과 이유는 간단했다.  
 
-![JDKError](https://drive.google.com/uc?export=view&id=1HsQWkaq-Aq5-pxVAWD04Qd2pVlUMbqKa)  
+![JDKError](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/0831JdkError.png)  
 
 캡쳐에선 채워져있지만... JDK 항목이 뜬금없이 비워져 있었다. ;;  
 다시 채워주니 잘 작동한다.  

@@ -23,7 +23,7 @@ fbx파일을 프리팹으로 만든 상태에서 바닥에 올려놓으면 NavMe
 
 그래서 NavMesh를 만들면 이렇게 되버린다.  
 
-![NavMesh](https://drive.google.com/uc?export=view&id=1cdVcRUwR4ZaVEBX_d0Wbjd9UR6jb47tr)
+![NavMesh](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-07-26_NavMesh1.png)  
 
 왼쪽이 FBX 파일 그대로 올린 것, 오른쪽이 프리팹 상태로 올린 것이다.  
 
@@ -34,6 +34,6 @@ fbx파일을 프리팹으로 만든 상태에서 바닥에 올려놓으면 NavMe
 해결 방법은, 먼저 유니티 상단메뉴의 Window -> AI -> Navigation 을 눌러 창을 띄운 후,  
 프리팹을 선택하고 이걸 체크해준다.  
 
-![NavMesh](https://drive.google.com/uc?export=view&id=1VloeVGIsUeSWgraORp_9ozwrEZH6Iasr)
+![NavMesh](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-07-26_NavMesh2.png)  
 
 그러면 메쉬 정보를 잘 읽어들인다!
