@@ -30,6 +30,14 @@ last_modified_at: 2024-01-19
 
 ### 뷰포트
 
+- `우클릭` 누른채 키를 입력하면 뷰포트 이동 가능
+  - [공식 문서 링크](https://docs.unrealengine.com/4.27/ko/BuildingWorlds/LevelEditor/Viewports/ViewportControls/#%EA%B2%8C%EC%9E%84%EC%8A%A4%ED%83%80%EC%9D%BC)
+  - WASD
+  - `E` : 카메라를 위로
+  - `Q` : 카메라를 아래로
+  - `Z` : 줌아웃
+  - `C` : 줌인
+
 - `NavMeshBoundsVolume` 를 레벨에 배치 하고나서 `P`
   - 녹색으로 길찾기를 수행할 수 있는 영역 표시
 
