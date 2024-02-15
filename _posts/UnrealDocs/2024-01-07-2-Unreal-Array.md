@@ -29,7 +29,7 @@ last_modified_at: 2024-01-07
 - 데이터가 많아질 수록 검색, 삭제, 수정 작업이 느려지기 때문에  
   많은 수의 데이터에서 검색 작업이 빈번하게 일어난다면, `TSet`을 사용할 것.
 
-![TArray](https://github.com/eggmong/eggmongImages/raw/main/Images/UnrealTArray.png)  
+![TArray]({{ site.imageurl }}Images/UnrealTArray.png)  
 
 - 배열을 시작하는 부분의 포인터를 `GetData()` 함수로 가져올 수 있음.
 - Insert, Remove 는 중간에 작업하는 거라 비용이 많이 듦

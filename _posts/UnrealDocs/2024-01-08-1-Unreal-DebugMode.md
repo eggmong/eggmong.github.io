@@ -20,7 +20,7 @@ last_modified_at: 2024-01-08
 
 비쥬얼 스튜디오에서 솔루션 구성을 `DebugGame Editor` 로 바꿔줘야 함.
 
-![TArray](https://github.com/eggmong/eggmongImages/raw/main/Images/UnrealDebugMode.png)  
+![TArray]({{ site.imageurl }}Images/UnrealDebugMode.png)  
 
 
 + 저 부분 늘리는 법

@@ -16,7 +16,7 @@ last_modified_at: 2023-11-07
 
 <br>
 
-![TextMeshPro](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-11-07-TextMeshPro_FontAsset_CustomRange/TextMeshPro.png)  
+![TextMeshPro]({{ site.imageurl }}UnityDocs/2023-11-07-TextMeshPro_FontAsset_CustomRange/TextMeshPro.png)  
 
 32-126,8200-9900,12593-12643,44032-55203
 

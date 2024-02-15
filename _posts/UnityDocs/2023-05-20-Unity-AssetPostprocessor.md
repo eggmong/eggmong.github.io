@@ -16,7 +16,7 @@ last_modified_at: 2023-05-20
 *유니티 GDC 2023 영상을 보다가 흥미로운 항목들은 정리해보는 중!*
 
 > 💡 개발 중에 에셋을 임포트 할 때, 임포트 설정을 해야 하는 경우가 있다.  
-![Import Setting](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-05-20_AssetPostprocessor_1.png){: width="60%" height="60%"}  
+![Import Setting]({{ site.imageurl }}UnityDocs/2023-05-20_AssetPostprocessor_1.png){: width="60%" height="60%"}  
 > 에셋들을 하나하나 일일이 설정하다 보면 (귀찮고) 실수할 수 있기 때문에,  
 > `AssetPostprocessor` 를 사용하여 쉽게 임포트 설정을 적용할 수 있다.  
 

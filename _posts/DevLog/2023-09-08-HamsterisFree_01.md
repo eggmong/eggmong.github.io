@@ -35,7 +35,7 @@ comments: true
 
 이렇게 원칙으로 삼고 시작하게 되었다.  
 
-![log1](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log1.png)  
+![log1]({{ site.imageurl }}UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log1.png)  
 
 찾아보니 첫 커밋 날짜가 7월 27일이었당.  
 
@@ -43,7 +43,7 @@ comments: true
 퇴근하고 저녁을 먹으면 8시쯤이었는데, 그 때 부터 새벽까지 매일매일 작업하고, 주말에도 작업했으니까...  
 나의 빽빽한 깃허브 잔디들이 증명해주고 있다.  
 
-![log2](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log2.png)    
+![log2]({{ site.imageurl }}UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log2.png)    
 
 
 처음 시스템 베이스부터 전부 스스로 구현해보려고 하다보니 시간도 오래 걸렸지만,  
@@ -64,9 +64,9 @@ comments: true
 그리하여 현재는 이런 방식이다.  
 
 
-![log3](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log3.png)    
-![log4](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log4.png)    
-![log5](https://github.com/eggmong/eggmongImages/raw/main/UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log5.png)    
+![log3]({{ site.imageurl }}UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log3.png)    
+![log4]({{ site.imageurl }}UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log4.png)    
+![log5]({{ site.imageurl }}UnityDocs/2023-09-08-HamsterisFree/2023-09-08_log5.png)    
 
 1. 버튼 하나를 눌러 Editor 상에서 Google Sheets들을 `csv로 다운`
 2. 다운 받은 `csv들을 파싱`하여 각각의 데이터클래스 기반으로 만들어진 `ScriptableObject로 자동 생성`

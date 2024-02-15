@@ -38,7 +38,7 @@ last_modified_at: 2024-01-03
       - Find or Add
   - [FName 문서 링크](https://docs.unrealengine.com/4.27/ko/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/StringHandling/FName/)
 
-![FName](https://github.com/eggmong/eggmongImages/raw/main/Images/UnrealFName.png)  
+![FName]({{ site.imageurl }}Images/UnrealFName.png)  
 
 ```cpp
 FName key1(TEXT("PELVIS"));

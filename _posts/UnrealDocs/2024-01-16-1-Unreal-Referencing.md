@@ -50,8 +50,8 @@ void AABCharacterBase::EquipWeapon(UABItemData* InItemData)
 > `Obj List Class=SkeletalMesh` 를 입력하면  
 > 현재 로드된 SkeletalMesh를 볼 수 있다.  
 
-![load](https://github.com/eggmong/eggmongImages/raw/main/UnrealDocs/UnrealUObjectPtrLoad.png)  
-![load](https://github.com/eggmong/eggmongImages/raw/main/UnrealDocs/UnrealUObjectPtrLoad2.png)  
+![load]({{ site.imageurl }}UnrealDocs/UnrealUObjectPtrLoad.png)  
+![load]({{ site.imageurl }}UnrealDocs/UnrealUObjectPtrLoad2.png)  
 
 아직 박스 안의 아이템을 먹지도 않았는데  
 코드 상에서 로드를 했기 때문에  

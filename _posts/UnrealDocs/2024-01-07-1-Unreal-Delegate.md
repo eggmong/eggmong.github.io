@@ -118,7 +118,7 @@ public class Person
 
 
 
-![Delegate](https://github.com/eggmong/eggmongImages/raw/main/Images/
+![Delegate]({{ site.imageurl }}Images/
 UnrealDeleagte.png)  
 
 

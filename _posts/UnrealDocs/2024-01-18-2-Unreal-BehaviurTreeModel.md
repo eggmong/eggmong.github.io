@@ -24,7 +24,7 @@ last_modified_at: 2024-01-18
   - Sequence 컴포짓 : 여러 행동을 연달아 수행하는 노드
   - Parallel 컴포짓 : 여러 행동을 함께 수행하는 노드
 
-![bt](https://github.com/eggmong/eggmongImages/raw/main/UnrealDocs/UnrealBehaviurTreeModel1.png)  
+![bt]({{ site.imageurl }}UnrealDocs/UnrealBehaviurTreeModel1.png)  
 
 
 
@@ -35,7 +35,7 @@ last_modified_at: 2024-01-18
 - 중지 (Aborted) : 진행하고 있었는데 외부 요인으로 인한 행동의 실패를 알려주는 값
 - 진행중 (InProgress) : 진행중이라고 컴포짓 노드에게 보고하는 값
 
-![bt](https://github.com/eggmong/eggmongImages/raw/main/UnrealDocs/UnrealBehaviurTreeModel2.png)  
+![bt]({{ site.imageurl }}UnrealDocs/UnrealBehaviurTreeModel2.png)  
 
 
 결과 값을 보고 받은 컴포짓 노드는 값에 따라 다른 행동을 취한다.  

@@ -34,7 +34,7 @@ targetArray = this.backTiles
 
 저 상태로 코드 리뷰를 보냈다가 [@BeautyfullCastle](https://github.com/BeautyfullCastle) 님께 댓글로 피드백을 받았다.  
 
-![log3](https://github.com/eggmong/eggmongImages/raw/main/CSharp/2023-09-12-CodeRefactoring.png)  
+![log3]({{ site.imageurl }}CSharp/2023-09-12-CodeRefactoring.png)  
 
 상수 값은 변수로 빼서 이름에 설명을 담는게 이해 하기 쉽다. (이 값이 어디서 튀어나온건지 맥락도 파악할 수 있고)  
 
