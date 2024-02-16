@@ -1,5 +1,5 @@
 ---
-title:  "언리얼 메모 6 / 인터페이스, 형변환"
+title:  "[정리] 언리얼 메모 6 / 인터페이스, 형변환"
 expert: "인터페이스, Interface"
 
 categories:

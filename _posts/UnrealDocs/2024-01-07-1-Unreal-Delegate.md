@@ -1,5 +1,5 @@
 ---
-title:  "언리얼 설계 - 델리게이트"
+title:  "[정리] 언리얼 설계 - 델리게이트"
 expert: "델리게이트, Delegate"
 
 categories:

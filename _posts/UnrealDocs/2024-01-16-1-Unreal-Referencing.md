@@ -1,5 +1,5 @@
 ---
-title:  "소프트 레퍼런싱 vs 하드 레퍼런싱"
+title:  "[정리] 소프트 레퍼런싱 vs 하드 레퍼런싱"
 
 categories:
   - UnrealDocs

@@ -1,5 +1,5 @@
 ---
-title:  "mixamo 애니메이션에 root 추가 및 루트 모션 적용"
+title:  "[정리] Singleton"
 
 categories:
   - UnrealDocs

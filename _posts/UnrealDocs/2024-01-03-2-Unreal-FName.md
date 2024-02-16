@@ -1,5 +1,5 @@
 ---
-title:  "언리얼 메모 3 / FName, FText"
+title:  "[정리] 언리얼 메모 3 / FName, FText"
 expert: "FName, FText"
 
 categories:

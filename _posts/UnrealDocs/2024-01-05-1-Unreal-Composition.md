@@ -1,5 +1,5 @@
 ---
-title:  "언리얼 설계 - 컴포지션"
+title:  "[정리] 언리얼 설계 - 컴포지션"
 expert: "컴포지션, Composition"
 
 categories:

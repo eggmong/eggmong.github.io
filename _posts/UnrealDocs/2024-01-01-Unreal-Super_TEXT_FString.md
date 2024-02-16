@@ -1,5 +1,5 @@
 ---
-title:  "언리얼 메모 1 (Super 키워드, TEXT 매크로, 등...)"
+title:  "[정리] 언리얼 메모 1 (Super 키워드, TEXT 매크로, 등...)"
 expert: "Super 키워드, TEXT 매크로, 라이브 코딩 단축키, FString"
 
 categories:

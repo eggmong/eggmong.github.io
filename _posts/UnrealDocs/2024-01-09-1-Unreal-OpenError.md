@@ -1,5 +1,5 @@
 ---
-title:  "[Error] 언리얼 프로젝트 .uproject 파일로 열 때 안열림 문제"
+title:  "언리얼 프로젝트 .uproject 파일로 열 때 안열림 문제"
 
 categories:
   - UnrealDocs
@@ -32,3 +32,9 @@ git에 언리얼 프로젝트를 커밋하고,
 Ctrl+F5 눌러서 실행해보면 프로젝트가 열린다.  
 
 이후부턴 `.uproject` 파일로 실행해도 프로젝트가 잘 열린다.  
+
+## 그래도 안 열리면
+
+sln 파일 먼저 열어서 비쥬얼 스튜디오 켠 다음에  
+위에 있는 `Development Editor` 로 빌드 진행.
+그러면 uproject 파일로 실행 가능함.
