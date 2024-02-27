@@ -18,6 +18,10 @@ imagefolder: "UnrealDocs/GameAbilitySystem/"
 
 # GameplayAbilitySystem
 
+액터에 기능을 추가하던 기존 방식에서  
+액터에서 기능을 분리하여 GAS 로 만들어서 액터에 추가해주는 방식이라  
+액터가 다양한 기능들을 추가로 가질 수 있도록 <b>확장 설계</b> 할 수 있는 장점이 있다.  
+
 ## GAS 핵심 요소
 
 ### 1. 어빌리티 시스템 컴포넌트 (AbilitySystemComponent, ASC)
