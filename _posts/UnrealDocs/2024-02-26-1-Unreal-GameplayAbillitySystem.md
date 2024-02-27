@@ -1,5 +1,5 @@
 ---
-title:  "[정리] 언리얼 GameAbilitySystem GAS"
+title:  "[정리] GAS, GameAbilitySystem"
 
 categories:
   - UnrealDocs
@@ -67,10 +67,10 @@ Config -> DefaultGameplayTags.ini 파일에서 추가한 태그를 확인할 수
 
 [![bt]({{ site.imageurl }}{{ page.imagefolder }}GASTagHeaderContext.png)]({{ site.imageurl }}{{ page.imagefolder }}GASTagHeaderContext.png)  
 
-`ABGameplayTag` 헤더파일만 인클루드하면 게임플레이 태그에 관련된 것들을  
-자동으로 모두 인클루드 하는 형태가 되도록 `GameplayTagContainer.h` 추가해줌.  
+`ABGameplayTag.h` 헤더파일만 인클루드하면 게임플레이 태그에 관련된 것들을  
+자동으로 모두 인클루드 하는 형태가 되도록 ABGameplayTag.h에 `GameplayTagContainer.h` 인클루드 해줌.  
 
-
+이런 식으로 편리하게 사용할 수 있다.
 
 
 
