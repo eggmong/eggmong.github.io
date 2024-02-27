@@ -34,6 +34,9 @@ imagefolder: "UnrealDocs/GameAbilitySystem/"
   - 어빌리티 시스템 컴포넌트
 
 
+***
+
+
 
 ### 2. 게임플레이 태그 (Tag)
 
@@ -77,12 +80,16 @@ Config -> DefaultGameplayTags.ini 파일에서 추가한 태그를 확인할 수
 이런 식으로 편리하게 사용할 수 있다.
 
 
+***
+
+
 
 ### 3. 게임플레이 어빌리티 (GA)
 
 - ASC 설정이 완료되면 GA를 설정해줘야 한다.
 - ASC에 등록되어 발동시킬 수 있는 액션 명령이라고 보면 된다.
   - 공격, 마법, 특수 공격 등...
+
 
 #### GA의 발동 과정
 
@@ -92,8 +99,25 @@ Config -> DefaultGameplayTags.ini 파일에서 추가한 태그를 확인할 수
   - ASC에 등록된 타입이면 GA의 인스턴스가 생성된다.
 - 발동된 GA에는 <b>발동한 액터와 실행 정보가 기록됨</b>
   - SpecHandle : 발동된 어빌리티에 대한 핸들
+    - ASC는 직접 어빌리티를 참조하지 않고 스펙 정보만 가지고 있음.
+    - 핸들 값은 전역으로 설정되어 있으며 스펙 생성시 자동으로 1씩 증가함. 기본값은 -1
+    - 어빌리티 정보 : 스펙
+    - 어빌리티 인스턴스에 대한 레퍼런스 : 스펙 핸들
   - ActorInfo : 어빌리티의 소유자와 아바타 정보
   - ActivationInfo : 발동 방식에 대한 정보
+
+> 👉 GameplayAbilitySpec  
+> 입력 값을 설정하는 필드 InputID가 제공됨.  
+> ASC에 등록된 스펙을 검사해서 <u>입력에 매핑된 GA를 찾을 수 있음</u> : `FindAbilitySpecFromInputID`  
+> 사용자 입력이 들어오면 ASC에서 입력에 관련된 GA를 검색함  
+> 
+> 해당 GA를 발견하면, 현재 발동 중인지 판별  
+> - GA가 발동 중이면 입력이 왔다는 신호를 전달 : `AbilitySpecInputPressed`  
+> - GA가 발동하지 않았다면 새롭게 발동 시킬 수 있음 : `TryActivateAbility`  
+>
+> 입력이 떨어지면 동일하게 처리  
+> - GA에게 입력이 떨어졌다는 신호 전달 : `AbilitySpecInputReleased`  
+
 
 #### GA의 주요 함수
 
@@ -101,6 +125,35 @@ Config -> DefaultGameplayTags.ini 파일에서 추가한 태그를 확인할 수
 - <b>ActivateAbility : 어빌리티가 발동될 때 호출</b>
 - <b>CancelAbility : 어빌리티가 취소될 때 호출</b>
 - EndAbility : 어빌리티를 스스로 마무리할 때 호출
+
+
+#### GA의 인스턴싱 옵션
+
+InstancingPolicy
+
+상황에 따라 다양한 인스턴스 정책을 지정할 수 있음.  
+
+- NonInstanced : 인스턴싱 없이 CDO 개체에서 어빌리티 일괄 처리
+  - 가장 가볍지만, '상태'가 부여되는 GA를 만들고자 할 땐 부적합
+- InstancedPerActor : 액터마다 하나의 어빌리티 인스턴스를 만들어 처리 (Primary Instance : 가장 먼저 생성된 인스턴스)  
+  - 가장 무난함
+  - 네트워크 리플리케이션시 정보들도 같이 네트워크를 통해서 넘어가게 되는데,  
+  InstancedPerActor 의 경우 리플리케이션이 용이함.
+- InstancedPerExecution : 발동할 때 마다 인스턴스를 생산함.
+
+Abilities/GameplayAbility_CharacterJump 에서 호출 예시 확인 가능.  
+
+```cpp
+UGameplayAbility_CharacterJump::UGameplayAbility_CharacterJump(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+	NetExecutionPolicy = EGameplayAbilityNetExecutionPolicy::LocalPredicted;
+	InstancingPolicy = EGameplayAbilityInstancingPolicy::NonInstanced;
+}
+```
+
+
+***
 
 
 
@@ -112,6 +165,9 @@ Config -> DefaultGameplayTags.ini 파일에서 추가한 태그를 확인할 수
    - 게임플레이 이펙트
    - 이펙트 실행 계산
    - 장식 이펙트 게임플레이 큐
+
+
+***
 
 
 
