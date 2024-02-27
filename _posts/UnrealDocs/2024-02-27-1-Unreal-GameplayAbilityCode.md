@@ -16,7 +16,9 @@ imagefolder: "UnrealDocs/GameAbilitySystem/"
 
 <br>
 
-# GameAbility 사용 예제
+# GameAbility 코드 예제
+
+C++ 로 어빌리티 작성 및 어빌리티를 블루프린트로도 만들어보기
 
 ## ABGameplayTag.h
 
@@ -251,3 +253,29 @@ void AABGASFountain::TimerAction()
 }
 
 ```
+
+
+
+
+
+# 블루프린트 버전으로 작성
+
+[![GA]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint1.png)]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint1.png)  
+
+Blueprint 폴더 생성 후 블루프린트 클래스 생성 클릭  
+
+[![GA]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint2.png)]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint2.png)  
+
+위에서 작성했었던 ABGASFountain 클래스 상속받도록 클릭  
+
+[![GA]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint3.png)]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint3.png)  
+
+생성된 블루프린트 열어서 GA 추가  
+
+[![GA]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint4.png)]({{ site.imageurl }}{{ page.imagefolder }}UnrealGABlueprint4.png)  
+
+추가 후 Compile 누르고 저장  
+
+이후 블루프린트를 맵에 배치 후 실행해보면  
+`PostInitializeComponents` 에서 `StartAbilities` 가 발동 되면서 ASC에 해당 어빌리티가 주어지고,  
+타이머에 의해 발동 될 것이다.  
