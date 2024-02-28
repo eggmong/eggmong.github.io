@@ -1,5 +1,5 @@
 ---
-title:  "[정리] GAS / GameplayAbility 사용 예제"
+title:  "[정리] GAS / GameplayAbility 사용 예제 (Fountain)"
 
 categories:
   - UnrealDocs

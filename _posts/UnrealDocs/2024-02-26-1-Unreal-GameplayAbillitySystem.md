@@ -178,6 +178,32 @@ UGameplayAbility_CharacterJump::UGameplayAbility_CharacterJump(const FObjectInit
    - 어트리뷰트 세트
 
 
+***
+
+
+
+### 6. 어빌리티 태스크 (AbilityTask, AT)
+
+- 게임플레이 어빌리티(GA)의 실행은 한 프레임에서 이루어짐.
+- GA가 시작되면 `EndAbility` 나 `CancelAbility` 함수가 호출되기 전 까지 끝나지 않음. 계속 발동 중인 상태.
+- 애니메이션 재생 같이 <b>시간이 소요</b>되고, <b>상태를 관리</b>해야 하는 어빌리티의 구현 방법이다.
+  - 비동기적으로 작업을 수행하고 끝나면 결과를 통보받는 형태로 구현해야 함.
+  - 이를 위해 GAS는 어빌리티 태스크를 제공한다는 것!
+
+#### AT의 활용 패턴
+
+1. 어빌리티 태스크에 <u>작업이 끝나면 브로드캐스팅되는 종료 델리게이트를 선언</u>함.
+2. GA는 AT를 생성한 후 바로 종료 델리게이트를 구독함
+3. GA의 구독 설정이 완료되면 AT를 구동 : <b>AT의 ReadyForActivation 함수 호출</b>
+4. AT의 작업이 끝나면 델리게이트를 구독한 GA의 콜백 함수가 호출됨
+5. GA의 콜백함수가 호출되면 <u>GA의 EndAbility 함수를 호출해 GA 종료</u>
+
+GA는 필요에 따라 다수의 AT를 사용하여 복잡한 액션 로직을 설계할 수 있다.  
+
+eg.  
+AbilityTask_PlayMontageAndWait : 몽타주를 재생하고 끝날 때 까지 기다려주는 AT
+
+
 # GAS Flow (흐름)
 
 [![bt]({{ site.imageurl }}{{ page.imagefolder }}GASFlow.png)]({{ site.imageurl }}{{ page.imagefolder }}GASFlow.png)  
@@ -197,4 +223,6 @@ UGameplayAbility_CharacterJump::UGameplayAbility_CharacterJump(const FObjectInit
 액션의 결과로 어떤 영향이 발동되면 이 영향을 강조하기 위해 시각적or청각적 효과를 주는데,  
 GAS에선 이것을 `Gameplay Cue` 라고 한다.  
 (일반적으로 우리가 '이펙트'라고 부르는 바로 그 효과! fx!)
+
+
 
