@@ -26,6 +26,9 @@ last_modified_at: 2024-01-19
 - `Ctrl + N`
   - 새 레벨 생성
 
+- `Ctrl + Alt + F11`
+  - 라이브 코딩 빌드
+
 
 
 ### 뷰포트

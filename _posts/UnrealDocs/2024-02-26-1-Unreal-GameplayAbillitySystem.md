@@ -137,6 +137,7 @@ InstancingPolicy
   - 가장 가볍지만, '상태'가 부여되는 GA를 만들고자 할 땐 부적합
 - InstancedPerActor : 액터마다 하나의 어빌리티 인스턴스를 만들어 처리 (Primary Instance : 가장 먼저 생성된 인스턴스)  
   - 가장 무난함
+  - '상태'를 필요로 할 때 사용 (점프 등)
   - 네트워크 리플리케이션시 정보들도 같이 네트워크를 통해서 넘어가게 되는데,  
   InstancedPerActor 의 경우 리플리케이션이 용이함.
 - InstancedPerExecution : 발동할 때 마다 인스턴스를 생산함.
@@ -190,6 +191,7 @@ UGameplayAbility_CharacterJump::UGameplayAbility_CharacterJump(const FObjectInit
   - 비동기적으로 작업을 수행하고 끝나면 결과를 통보받는 형태로 구현해야 함.
   - 이를 위해 GAS는 어빌리티 태스크를 제공한다는 것!
 
+
 #### AT의 활용 패턴
 
 1. 어빌리티 태스크에 <u>작업이 끝나면 브로드캐스팅되는 종료 델리게이트를 선언</u>함.
@@ -202,6 +204,21 @@ GA는 필요에 따라 다수의 AT를 사용하여 복잡한 액션 로직을 �
 
 eg.  
 AbilityTask_PlayMontageAndWait : 몽타주를 재생하고 끝날 때 까지 기다려주는 AT
+
+
+#### AT의 제작 규칙
+
+- AT는 UAbilityTask 클래스를 상속받아 제작한다.
+- (자기 자신의) AT 인스턴스를 생성해 반환하는 `static` 함수를 선언해 구현한다. (항상 X)
+- AT가 종료되면, AT를 호출한 GA에 알려줄 <b>델리게이트</b>를 선언해야 한다.
+- 시작과 종료에서 어떠한 처리가 필요하다면, <b>Activate</b>와 <b>OnDestroy</b> 함수를 재정의(override) 하여 구현한다.
+- 일정 시간이 지난 후 AT를 종료하고자 한다면, 활성화시 `SetWaitingOnAvatar` 함수를 호출해 <u>Waiting 상태</u>로 설정한다.
+  - > 점프를 수행하고 나서 바로 끝나는 것이 아니라, 땅에 닿을 때 까지 기다려야 할 때.
+- 만일 <b>Tick</b>을 활성화하고 싶다면 UAbilityTask의 멤버변수인 <b>bTickingTask</b> 값을 true로 설정한다.
+- AT가 종료되면, 앞에서 선언한 델리게이트를 브로드캐스팅 한다.
+
+***
+
 
 
 # GAS Flow (흐름)
