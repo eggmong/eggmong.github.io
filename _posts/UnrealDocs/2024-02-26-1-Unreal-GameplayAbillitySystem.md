@@ -217,6 +217,8 @@ AbilityTask_PlayMontageAndWait : 몽타주를 재생하고 끝날 때 까지 기
 - 만일 <b>Tick</b>을 활성화하고 싶다면 UAbilityTask의 멤버변수인 <b>bTickingTask</b> 값을 true로 설정한다.
 - AT가 종료되면, 앞에서 선언한 델리게이트를 브로드캐스팅 한다.
 
+
+
 ***
 
 
@@ -243,3 +245,21 @@ GAS에선 이것을 `Gameplay Cue` 라고 한다.
 
 
 
+
+# 블루프린트에서 호출을 위한 제작 규칙
+
+- static 함수에 UFUNCTION(BlueprintCallable) 지정
+- 콜백을 위한 델리게이트는 Dynamic Delegate 로 선언한다.
+- AT의 델리게이트에 UPROPERTY(BlueprintAssignable) 을 지정한다.
+
+```cpp
+UFUNCTION(BlueprintCallable, Category = "Ability|Tasks", meta = (DisplayName = "JumpAndWaitForLanding", HidePin = "OwningAbility", DefaultToSelf = "OwningAbility", BlueprintInternalUseOnly = "TRUE"))
+static UABAT_JumpAndWaitForLanding* CreateTask(UGameplayAbility* OwningAbility);
+
+// ...
+
+UPROPERTY(BlueprintAssignable)
+FJumpAndWaitForLandingDelegate OnComplete;
+```
+
+[![bt]({{ site.imageurl }}UnrealDocs/BlueprintMakeRule.png)]({{ site.imageurl }}UnrealDocs/BlueprintMakeRule.png)  

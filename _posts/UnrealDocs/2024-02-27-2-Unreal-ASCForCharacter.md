@@ -306,6 +306,19 @@ ActivationOwnedTags 에 태그 추가
 
 캐릭터 블루프린트의 GAS 항목에 블루프린트로 만든 어빌리티로 교체  
 
+## ActivationBlockedTags
+
+현재 이걸로 지정된 태그를 발동하고 있다면, 어빌리티를 발동 할 수 없음
+
+[![GA]({{ site.imageurl }}{{ page.imagefolder }}ActivateBlockedTags1.png)]({{ site.imageurl }}{{ page.imagefolder }}ActivateBlockedTags1.png)  
+
+공격 중엔 점프 어빌리티 발동 불가.  
+
+[![GA]({{ site.imageurl }}{{ page.imagefolder }}ActivateBlockedTags2.png)]({{ site.imageurl }}{{ page.imagefolder }}ActivateBlockedTags2.png)  
+
+점프 중에는 공격 발동 불가.  
+
+
 
 
 
