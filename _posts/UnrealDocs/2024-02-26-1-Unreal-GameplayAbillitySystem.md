@@ -4,7 +4,7 @@ title:  "[정리] GAS, GameAbilitySystem"
 categories:
   - UnrealDocs
 tags:
-  - [Unreal, Game Engine, GAS, GameAbilitySystem]
+  - [Unreal, Game Engine, GAS, GameAbilitySystem, GA, GameplayAbility, AT, AbilityTask]
 
 toc: true
 toc_sticky: true
@@ -217,6 +217,10 @@ AbilityTask_PlayMontageAndWait : 몽타주를 재생하고 끝날 때 까지 기
 - 만일 <b>Tick</b>을 활성화하고 싶다면 UAbilityTask의 멤버변수인 <b>bTickingTask</b> 값을 true로 설정한다.
 - AT가 종료되면, 앞에서 선언한 델리게이트를 브로드캐스팅 한다.
 
+
+#### GameplayAbility와 AbilityTask 사이의 실행 흐름
+
+[![bt]({{ site.imageurl }}{{ page.imagefolder }}UnrealAT.png)]({{ site.imageurl }}{{ page.imagefolder }}UnrealAT.png)  
 
 
 ***
