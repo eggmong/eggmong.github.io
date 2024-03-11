@@ -118,6 +118,44 @@ Config -> DefaultGameplayTags.ini 파일에서 추가한 태그를 확인할 수
 > 입력이 떨어지면 동일하게 처리  
 > - GA에게 입력이 떨어졌다는 신호 전달 : `AbilitySpecInputReleased`  
 
+```cpp
+void AABGASCharacterPlayer::GASInputPressed(int32 InputId)
+{
+	FGameplayAbilitySpec* Spec = ASC->FindAbilitySpecFromInputID(InputId);
+	if (Spec)
+	{
+		Spec->InputPressed = true;		// 스펙에 현재 상태 지정
+		if (Spec->IsActive())
+		{
+			// 어빌리티가 현재 발동이 되어 있는 상태라면
+			
+			ASC->AbilitySpecInputPressed(*Spec);
+			// 입력이 왔다는 신호를 전달
+		}
+		else
+		{
+			// 발동하지 않았다면 새롭게 발동 시킴
+			ASC->TryActivateAbility(Spec->Handle);
+		}
+	}
+}
+```
+
+```cpp
+void AABGASCharacterPlayer::GASInputReleased(int32 InputId)
+{
+	FGameplayAbilitySpec* Spec = ASC->FindAbilitySpecFromInputID(InputId);
+	if (Spec)
+	{
+		Spec->InputPressed = false;
+		if (Spec->IsActive())
+		{
+			ASC->AbilitySpecInputReleased(*Spec);
+		}
+	}
+```
+
+
 
 #### GA의 주요 함수
 
