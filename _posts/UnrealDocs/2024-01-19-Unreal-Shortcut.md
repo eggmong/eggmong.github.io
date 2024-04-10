@@ -55,3 +55,6 @@ last_modified_at: 2024-01-19
 
 - `Shift + F1`
   - 뷰포트에서 플레이 중에 마우스 커서 되살리기
+
+- 플레이 중 `PageUp`, `PageDown`
+  - 맵에서 현재 선택된(활성화된) Actor를 바꿀 수 있음
