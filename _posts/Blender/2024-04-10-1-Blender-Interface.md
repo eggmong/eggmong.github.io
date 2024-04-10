@@ -1,6 +1,6 @@
 ---
 title:  "블렌더 인터페이스 설정하기"
-expert: "블렌더 작업환경 세팅"
+excerpt: "블렌더 작업환경 세팅"
 
 categories:
   - Blender

@@ -1,6 +1,6 @@
 ---
 title:  "뷰포트 셰이딩 & 오버레이 사용하기"
-expert: "블렌더 작업환경 세팅"
+excerpt: "오브젝트들을 구분하기 위해 색 넣어주고, 뷰포트에서 숨기는 법"
 
 categories:
   - Blender
