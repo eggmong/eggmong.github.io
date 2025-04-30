@@ -78,82 +78,112 @@ int가 4바이트라는 표준은 사실 없음.
 
 ## 3. enum class
 
-- 문제점 : C스타일 enum
-  ```cpp
-  // Main.cpp
-  enum eScoreType
+### C스타일 enum
+
+열거형 : 상수에 이름을 부여해주는 기능이다.  
+- 열거형은 사용자정의 변수 타입으로도 사용이 가능하다.  
+- 열거형의 이름은 사용자정의 변수 타입이 된다.  
+- 열거형 안의 목록은 상수가 된다.  
+- 열거형 안의 목록은 기본으로 0부터 1씩 차례로 증가하게 된다.  
+- 열거형 안의 목록은 원한다면 기본 값을 변경할 수도 있다.  
+- 기본 4바이트로 생성된다.
+
+```cpp
+namespace SRP
+{
+	// char 형으로 지정하여 enum의 크기 조절
+	enum E_SRP : char
+	{
+		Scissor = 1,
+		Rock,
+		Paper
+	};
+}
+```
+
+
+
+### 기존 C스타일 enum 의 문제점
+
+```cpp
+// Main.cpp
+enum eScoreType
+{
+  Assignment1,
+  Assignment2,
+  Assignment3,
+  Midterm,
+  Count,
+};
+
+enum eStudyType
+{
+  Fulltime,
+  PartTime,
+};
+
+// Main.cpp
+int main()
+{
+  eScoreType type = Midterm;
+  eStudyType studyType = FullTime;
+
+  int num = Assignment3;                              // 문제 발생!
+
+  if (type == FullTime)                               // 문제 발생!
   {
-    Assignment1,
-    Assignment2,
-    Assignment3,
-    Midterm,
-    Count,
-  };
-
-  enum eStudyType
-  {
-    Fulltime,
-    PartTime,
-  };
-
-  // Main.cpp
-  int main()
-  {
-    eScoreType type = Midterm;
-    eStudyType studyType = FullTime;
-
-    int num = Assignment3;                              // 문제 발생!
-
-    if (type == FullTime)                               // 문제 발생!
-    {
-        // ...
-    }
-
-    return 0;
+      // ...
   }
-  ```
 
-> 컴파일러가 타입 체크를 해주지 않는다는 단점이 있었음!
+  return 0;
+}
+```
 
-- 해결책 : enum class
-  ```cpp
-  // Main.cpp
-  enum class eScoreType
+> 컴파일러가 <b>타입 체크</b>를 해주지 않는다는 단점이 있었음!
+
+
+
+### 해결책 : enum class
+  
+```cpp
+// Main.cpp
+enum class eScoreType
+{
+  Assignment1,
+  Assignment2,
+  Assignment3,
+  Midterm,
+  Count,
+};
+
+enum class eStudyType
+{
+  Fulltime,
+  PartTime,
+};
+
+// Main.cpp
+int main()
+{
+  eScoreType type = eScoreType::Midterm;
+  eStudyType studyType = eStudyType::FullTime;
+
+  int num = eScoreType::Assignment3;                              // 에러 출력함
+
+  if (score == eStudyType::FullTime)                              // 에러 출력함
   {
-    Assignment1,
-    Assignment2,
-    Assignment3,
-    Midterm,
-    Count,
-  };
-
-  enum class eStudyType
-  {
-    Fulltime,
-    PartTime,
-  };
-
-  // Main.cpp
-  int main()
-  {
-    eScoreType type = eScoreType::Midterm;
-    eStudyType studyType = eStudyType::FullTime;
-
-    int num = eScoreType::Assignment3;                              // 에러 출력함
-
-    if (score == eStudyType::FullTime)                              // 에러 출력함
-    {
-        // ...
-    }
-
-    return 0;
+      // ...
   }
-  ```
+
+  return 0;
+}
+```
 
 > 컴파일 에러 출력을 해주므로 실수를 잡을 수 있다.
 
 - 정수형으로의 암시적 캐스팅이 없음
 - 자료형 검사(타입체크) 해준다
+- > 값이 아닌 타입이 지정되는 것이므로 (E_SRP 타입이 되는 것), 다른 변수에게 정수값으로 대입되지 않는다.  
 - 또한 enum에 할당할 바이트 양을 정할 수도 있음
   - 파일 저장할 때 유용...
 
