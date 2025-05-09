@@ -1,10 +1,10 @@
 ---
-title:  "C++ 기초 정리 (포인터, 이중 포인터)"
+title:  "C++ 기초 정리 (포인터, 이중 포인터, 레퍼런스)"
 
 categories:
   - Cpp
 tags:
-  - [Cpp, C++, pointer]
+  - [Cpp, C++, pointer, reference]
 
 toc: true
 toc_sticky: true
@@ -315,3 +315,7 @@ void main()
   ArrTest(Array1);
 }
 ```
+
+
+
+# 레퍼런스 (&)

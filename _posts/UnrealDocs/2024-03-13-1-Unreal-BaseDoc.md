@@ -1,5 +1,5 @@
 ---
-title:  "[정리] 언리얼 엔진 기초 개념 정리"
+title:  "[정리] 언리얼 엔진 기초 개념 정리 (World, Actor, Pawn, Input, GameMode, Character)"
 
 categories:
   - UnrealDocs

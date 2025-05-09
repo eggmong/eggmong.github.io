@@ -1,5 +1,5 @@
 ---
-title:  "[정리] 언리얼 메모 4 / 언리얼 오브젝트"
+title:  "[정리] 언리얼 메모 4 / 언리얼 오브젝트 (UObject)"
 expert: "FName, FText"
 
 categories:
