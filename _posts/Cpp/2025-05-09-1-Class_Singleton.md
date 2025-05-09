@@ -35,6 +35,12 @@ this는 <u>자기 자신의 메모리 주소</u>이다.
 
 > 💡 멤버함수 내부에서 클래스 멤버변수를 사용하게 되면 앞에 `this->` 가 생략된 것이다.  
 
+// printf("this Test = %p", &this);
+// &this 는 에러가 남. this는 변수가 아님. 만약 변수였다면, sizeof 클래스 크기 구했을 때 this의 변수 크기까지 포함되어 계산되었을 것.
+
+// 직접 멤버변수에 접근하게 되면, 클래스 변수를 nullptr 로 초기화 했을 경우, 에러가 남. this는 nullptr 이니까.
+// (printf("Attack : %d", mAttack); 혹은 this->mAttack ~~~ 이렇게 한다는 소리)
+
 
 ### memset
 
