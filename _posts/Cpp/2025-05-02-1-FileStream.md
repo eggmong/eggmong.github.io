@@ -1,3 +1,20 @@
+---
+title:  "C++ 기초 정리 (파일 입출력, fstream)"
+
+categories:
+  - Cpp
+tags:
+  - [Cpp, C++, fstream]
+
+toc: true
+toc_sticky: true
+ 
+date: 2025-05-02
+last_modified_at: 2025-05-02
+---
+
+<br>
+
 # C 스타일 파일 입출력
 
 File Stream을 만들어서 FILE 타입의 변수에 가지고 있게 해준다.
