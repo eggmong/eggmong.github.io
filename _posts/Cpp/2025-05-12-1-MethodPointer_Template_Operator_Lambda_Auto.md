@@ -285,6 +285,22 @@ int main()
 ```
 
 
+### decltype: 타입 추론
+
+람다 타입도 추론 가능...  
+
+```cpp
+int cnt = 100;
+int& refcnt = cnt;
+
+// 컴파일러는 decltype(refcnt) = int &로 추론한다.
+decltype(refcnt) decl_refcnt = refcnt;
+
+auto lambda = [](int x) { return x * 2; };
+decltype(lambda) another = lambda;  // OK: lambda 타입을 그대로 추론해서 사용
+```
+
+
 
 # 오퍼레이터
 
