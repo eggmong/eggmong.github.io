@@ -1,3 +1,20 @@
+---
+title:  "동적 배열, 더블링크드리스트 구현 (C++)"
+
+categories:
+  - Cpp
+tags:
+  - [Cpp, C++, DynamicArray, DoubleLinkedList]
+
+toc: true
+toc_sticky: true
+ 
+date: 2025-05-12
+last_modified_at: 2025-05-12
+---
+
+<br>
+
 # 동적 배열
 
 
