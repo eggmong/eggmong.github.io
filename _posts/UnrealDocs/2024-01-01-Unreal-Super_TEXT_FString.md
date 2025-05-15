@@ -59,12 +59,16 @@ Super::Init();
 ```
 
 `Super` 키워드는 부모 클래스를 가리킨다.
+C#에선 `base.` 로 접근했었는데.  
 
 
 
 # 로그 : UE_LOG
 
-`UE_LOG(로그 카테고리, 로그 출력 수준(Log, Warning, Error), TEXT("%s"), TEXT("Hello Unreal"));`
+첫번째 인자에 로그 카테고리,  
+두번째 인자에 로그 출력 수준 (Log, Warning, Error),  
+세번째 인자에 출력할 내용의 포맷 (%s, %d...)  
+네번째 인자에 출력할 내용을 입력한다.  
 
 `UE_LOG(LogTemp, Log, TEXT("%s"), TEXT("Hello Unreal"));`
 
@@ -75,8 +79,9 @@ Super::Init();
 - 유니코드를 사용해 문자열 처리를 통일
   - 2byte로 크기가 균일한 UTF-16을 사용
   - 유니코드를 위한 언리얼 표준 캐릭터 타입 : `TCHAR`
-- 문자열은 언제나 TEXT 매크로를 사용해 지정
-  - TEXT 매크로로 감싼 문자열은 TCHAR 배열로 지정됨
+- 문자열은 언제나 `TEXT` 매크로를 사용해 지정
+  - TEXT("Hello Unreal")
+  - TEXT 매크로로 감싼 문자열은, TCHAR 배열로 지정됨
 - 문자열을 다루는 클래스로 `FString` 제공
   - FString 은 TCHAR 배열을 포함하는 헬퍼 클래스
 
@@ -85,9 +90,11 @@ void UMyGameInstance::Init()
 {
 	Super::Init();
 
+  // 배열의 값을 출력할 땐, 배열 이름만 넣는다.
 	TCHAR LogCharArray[]  = TEXT("Hello Unreal");
 	UE_LOG(LogTemp, Log, LogCharArray);
 
+  // FString의 경우 *를 붙여 역참조 해줘야 함. 역참조해서, 가리키는 값 = TCHAR*
 	FString LogCharString = LogCharArray;
 	UE_LOG(LogTemp, Log, TEXT("%s"), *LogCharString);
 }
@@ -102,14 +109,14 @@ void UMyGameInstance::Init()
 
 
 
-# 타입별 고려할 것
+# 언리얼에서 사용하는 데이터 타입
 
-## int
+## int32
 
 - C#의 경우 int 타입은 4바이트인 int32로 명확히 정의가 되어 있음
 - Unreal은 int를 사용하지 않고 `int32` 를 사용함
 
-## bool, uint8(unsigned byte, 1바이트)
+## bool, uint8( unsigned byte, 1바이트(8비트) )
 
 - 참/거짓 데이터를 네트워크로 전송할 때, 또는 디스크에 저장할 때  
   `헤더파일`에 `bool 변수를 사용하지 않고`,  
