@@ -1,3 +1,20 @@
+---
+title:  "C++ 기초 정리 (캐스팅 종류, 가상 함수 (virtual))"
+
+categories:
+  - Cpp
+tags:
+  - [Cpp, C++, Cast, virtual]
+
+toc: true
+toc_sticky: true
+ 
+date: 2025-05-15
+last_modified_at: 2025-05-15
+---
+
+<br>
+
 ```cpp
 
 #include <iostream>

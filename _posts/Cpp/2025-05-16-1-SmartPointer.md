@@ -1,4 +1,22 @@
+---
+title:  "C++ 기초 정리 (스마트포인터)"
+
+categories:
+  - Cpp
+tags:
+  - [Cpp, C++, shared_ptr, weak_ptr, unique_ptr]
+
+toc: true
+toc_sticky: true
+ 
+date: 2025-05-16
+last_modified_at: 2025-05-16
+---
+
+<br>
+
 ```cpp
+
 #include <iostream>
 
 // 동적할당을 사용할 때 생길 수 있는 문제점.
@@ -46,7 +64,7 @@ int main()
 	*number = 500;
 	std::shared_ptr<int> sharedPtr(number);					// 레퍼런스 카운트 1 됨.
 	// 이렇게 shared_ptr로 만든 후엔 number를 사용하지 않고 shared_ptr을 사용하는 게 좋다.
-
+    std::cout << sharedPtr.use_count();						// 1 출력
 	printf("%d\n", *sharedPtr);								// 500 출력.
 
 	std::shared_ptr<int> sharedPtr1 = std::make_shared<int>(123);		// 이렇게도 가능.
