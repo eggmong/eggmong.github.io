@@ -54,6 +54,7 @@ UPROPERTY(EditDefaultsOnly, Category=Pawn) // <-------- 이거!!!
 
 > `EditDefaultsOnly, Category=Pawn` 같은 특별한 지시자 : 추가적인 메타 데이터  
 > 에디터와 직접 연동하여 게임 제작할 때 사용됨  
+> [클래스 지정자 문서](https://dev.epicgames.com/documentation/ko-kr/unreal-engine/class-specifiers)
 
 
 > 리플렉션된 프로퍼티가 아닌 것들은 언리얼 엔진 시스템에서 관리되지 않음 -> 직접 처리해야 함  
@@ -164,7 +165,7 @@ void UMyGameInstance::Init()
 
 	UE_LOG(LogTemp, Log, TEXT("Default 학교 이름 : %s"),
     *GetClass()->GetDefaultObject<UMyGameInstance>()->SchoolName);
-	// 위의 코드는 학교 이름을 출력하지 않는다...
+	// 위의 코드는 학교 이름을 출력하지 않는다... (에디터를 한번도 끄지 않고 클래스 생성 및 작업을 해왔다면.)
 	// CDO의 경우 에디터가 활성화 되기 이전에 초기화 되기 때문에,
 	// 생성자에서 초기화를 해도 에디터에서 인지를 못 할 수 있음
 
@@ -183,5 +184,12 @@ void UMyGameInstance::Init()
 - 언리얼 오브젝트에는 항상 클래스 정보를 담은 UClass 객체가 매칭되어 있다
 - UClass로부터 언리얼 오브젝트의 정보를 파악할 수 있음
 - UClass에는 클래스 기본 오브젝트(CDO)가 연결되어 있어 이를 활용할 수 있음
-- 클래스 정보와 CDO는 엔진 초기화 과정에서 생성됨
+- 클래스 정보와 CDO는 엔진 초기화 과정에서 생성됨 (= 즉 에디터 킬 때.)
 - <b>헤더 정보를 변경하거나, 생성자 정보를 변경하면</b> 에디터를 끄고 컴파일해야 함
+
+// ---
+
+`GENERATED_BODY`  
+언리얼 리플렉션 시스템: UHT(코드 생성 도구)가 동작하기 위해 필요한 코드를 자동으로 추가해주는 매크로.  
+
+[클래스 지정자 문서](https://dev.epicgames.com/documentation/ko-kr/unreal-engine/class-specifiers)

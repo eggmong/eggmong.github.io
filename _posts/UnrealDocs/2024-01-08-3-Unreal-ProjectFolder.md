@@ -20,10 +20,13 @@ last_modified_at: 2024-01-08
 
 ## 1. Config
 
+필수  
 프로젝트 설정에 필요한 정보 보관
+(ini 파일 등)
 
 ## 2. Content
 
+필수  
 에셋 보관
 
 ## 3. DerivedDataCache
@@ -43,3 +46,14 @@ last_modified_at: 2024-01-08
 임시로 무언가를 저장하는 용도로 사용.  
 의도적으로 어떤 데이터 저장한 거 없다면  
 지워도 무방.  
+
+## 6. Plugins
+
+필수  
+
+## 7. Source
+
+필수  
+
+
+그 외 필수 파일 : uproject 파일

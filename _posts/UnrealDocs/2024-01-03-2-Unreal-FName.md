@@ -62,7 +62,7 @@ for 문에서 계속 실행 되므로 오버헤드가 발생할 수 있음.
 ```cpp
 for (int i = 0; i < 10000; ++i)
 {
-    FName SearchInNamePool = FName(TEXT("pelvis"));
+    // FName SearchInNamePool = FName(TEXT("pelvis"));
 
     const static FName StaticOnlyOnce(TEXT("pelvis"));
 }
